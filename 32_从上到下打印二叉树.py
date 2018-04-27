@@ -62,6 +62,10 @@ def print_tree_from_top_to_bottom2(root):
 
 
 def print_tree_from_top_to_bottom3(root):
+    if root is None:
+        return
+
+    assert isinstance(root, TreeNode)
     stack1 = []
     stack2 = []
     stack1.append(root)

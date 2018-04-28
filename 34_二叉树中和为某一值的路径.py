@@ -6,6 +6,9 @@ class TreeNode(object):
 
 
 def find_path(root, expected_sum):
+    if not isinstance(root, TreeNode) or not isinstance(expected_sum, int):
+        return
+
     path = []
     current_sum = 0
     find_path_core(root, expected_sum, path, current_sum)

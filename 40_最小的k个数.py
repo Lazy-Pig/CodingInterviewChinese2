@@ -28,7 +28,7 @@ def partitaion(array, start, end):
     return right
 
 
-def get_least_numbers(array, k):
+def get_least_numbers1(array, k):
     if not isinstance(array, list) or len(array) == 0 or not isinstance(k, int) or k <= 0 or k > len(array):
         return
 
@@ -57,9 +57,18 @@ def get_least_numbers(array, k):
 
 
 def get_least_numbers2(array, k):
-    pass
+    import heapq
+
+    max_heap = []
+    for x in array:
+        heapq.heappush(max_heap, -x)
+        if len(max_heap) > k:
+            heapq.heappop(max_heap)
+    for x in max_heap:
+        print(-x, end=" ")
+    print()
 
 
 if __name__ == "__main__":
-    get_least_numbers([4, 5, 1, 6, 2, 7, 3, 8], 4)
+    get_least_numbers1([4, 5, 1, 6, 2, 7, 3, 8], 4)
 

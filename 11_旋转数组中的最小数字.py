@@ -20,7 +20,7 @@ def find_min_in_rotated_arr(numbers):
 
         if numbers[mid] >= numbers[p1]:
             p1 = mid
-        else:
+        elif numbers[mid] <= numbers[p2]:
             p2 = mid
     return p1, numbers[p1]
 
